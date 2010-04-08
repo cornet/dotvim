@@ -39,7 +39,7 @@ set gfn=Inconsolata\ 10
 
 " Theme selection
 if has("gui_running")
-  	colorscheme wombat
+  	colorscheme twilight2
 	set guioptions-=T
 else
   	colorscheme neon
