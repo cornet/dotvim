@@ -176,3 +176,4 @@ au BufRead,BufNewFile *.wiki setf wikipedia
 
 " Load tags file for C
 set tags+=~/.vim/systags
+filetype plugin indent on
