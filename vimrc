@@ -35,7 +35,7 @@ set viminfo='20,<50,s10,h,!
 syntax enable
 
 "Set font to Monaco 10pt
-set gfn=Inconsolata\ 10
+set gfn=Droid\ Sans\ Mono\ 8
 
 " Theme selection
 if has("gui_running")
