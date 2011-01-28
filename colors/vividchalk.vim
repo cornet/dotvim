@@ -148,12 +148,9 @@ hi Type gui=none
 hi Statement gui=none
 if !has("gui_mac")
     " Mac GUI degrades italics to ugly underlining.
-    hi Comment gui=none
-    hi railsUserClass  gui=none
-    hi railsUserMethod gui=none
-"    hi Comment gui=italic
-"    hi railsUserClass  gui=italic
-"    hi railsUserMethod gui=italic
+    hi Comment gui=italic
+    hi railsUserClass  gui=italic
+    hi railsUserMethod gui=italic
 endif
 hi Identifier cterm=none
 " Commented numbers at the end are *old* 256 color values
