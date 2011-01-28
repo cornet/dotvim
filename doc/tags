@@ -18,6 +18,8 @@
 'NERDTreeWinPos'	NERD_tree.txt	/*'NERDTreeWinPos'*
 'NERDTreeWinSize'	NERD_tree.txt	/*'NERDTreeWinSize'*
 'loaded_nerd_tree'	NERD_tree.txt	/*'loaded_nerd_tree'*
+:Ack	ack.txt	/*:Ack*
+:AckAdd	ack.txt	/*:AckAdd*
 :CVSEdit	vcscommand.txt	/*:CVSEdit*
 :CVSEditors	vcscommand.txt	/*:CVSEditors*
 :CVSUnedit	vcscommand.txt	/*:CVSUnedit*
@@ -29,6 +31,8 @@
 :CVSWatchers	vcscommand.txt	/*:CVSWatchers*
 :CommandT	command-t.txt	/*:CommandT*
 :CommandTFlush	command-t.txt	/*:CommandTFlush*
+:LAck	ack.txt	/*:LAck*
+:LAckAdd	ack.txt	/*:LAckAdd*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
 :NERDTreeFromBookmark	NERD_tree.txt	/*:NERDTreeFromBookmark*
@@ -154,6 +158,9 @@ YRToggle	yankring.txt	/*YRToggle*
 YRYankCount	yankring.txt	/*YRYankCount*
 YRYankRange	yankring.txt	/*YRYankRange*
 YRYankRange-example	yankring.txt	/*YRYankRange-example*
+ack	ack.txt	/*ack*
+ack-author	ack.txt	/*ack-author*
+ack.txt	ack.txt	/*ack.txt*
 align	Align.txt	/*align*
 align-align	Align.txt	/*align-align*
 align-codepoint	Align.txt	/*align-codepoint*
