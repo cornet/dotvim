@@ -39,8 +39,8 @@ set gfn=Droid\ Sans\ Mono\ 8
 
 " Theme selection
 if has("gui_running")
-  	colorscheme twilight2
-	set guioptions-=T
+  	colorscheme molokai
+	set guioptions=aAcem
 else
   	colorscheme neon
   ""	colorscheme wombat 
