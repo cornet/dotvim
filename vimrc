@@ -150,7 +150,7 @@ set shiftwidth=2
 	""""""""""""""""""""""""""""""""
 	" For VimWiki
 	""""""""""""""""""""""""""""""""
-	let g:vimwiki_list = [{'path': '~/Documents/vimwiki'}]
+	let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 
 	
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
