@@ -147,6 +147,11 @@ set shiftwidth=2
 	map <leader>T :Tlist<cr> 
 	map <Leader>rt :!ctags --extra=+f -R *<cr><cr>
 
+	""""""""""""""""""""""""""""""""
+	" For VimWiki
+	""""""""""""""""""""""""""""""""
+	let g:vimwiki_list = [{'path': '~/Documents/vimwiki'}]
+
 	
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File Specific Stuff
