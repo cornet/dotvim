@@ -189,7 +189,7 @@ au BufNewFile,BufRead zapata.conf      setf asterisk
 au BufNewFile,BufRead zaptel.conf      setf asterisk
 
 " Wiki Syntax Highlighting
-au BufRead,BufNewFile *.wiki setf wikipedia
+" au BufRead,BufNewFile *.wiki setf wikipedia
 
 " Load tags file for C
 set tags+=~/.vim/systags
