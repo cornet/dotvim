@@ -25,10 +25,11 @@ map <leader>e :e! ~/.vimrc<cr>
 "When .vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
 
-"Set path for .swp files
+"Set path for .swp files and ~ files
 set directory=~/.vimtmp
+set backupdir=~/.vimtmp
 
-" Set viminfo 
+"Set viminfo 
 set viminfo='20,<50,s10,h,!
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,7 +116,9 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set shiftwidth=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Options
