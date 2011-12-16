@@ -1,6 +1,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = https://github.com/vim-scripts/NERD_tree-Project.git
+	url = https://github.com/vim-scripts/The-NERD-tree.git
 [submodule "bundles/bufexplorer"]
 	path = bundles/bufexplorer
 	url = git@github.com:cornet/vim-bufexplorer.git
