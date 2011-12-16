@@ -37,3 +37,6 @@
 [submodule "bundle/align"]
 	path = bundle/align
 	url = https://github.com/vim-scripts/Align.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/vim-scripts/Tabular.git
