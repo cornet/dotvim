@@ -1,6 +1,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
+	url = https://github.com/vim-scripts/NERD_tree-Project.git
 [submodule "bundles/bufexplorer"]
 	path = bundles/bufexplorer
 	url = git@github.com:cornet/vim-bufexplorer.git
@@ -9,16 +9,22 @@
 	url = git@github.com:cornet/vim-bufexplorer.git
 [submodule "bundle/vcscommand"]
 	path = bundle/vcscommand
-	url = git@github.com:cornet/vim-vcscommand.git
+	url = https://github.com/vim-scripts/vcscommand.vim.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/colors"]
 	path = bundle/colors
-	url = git@github.com:cornet/vim-colors.git
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
-	url = git@github.com:cornet/vim-vimwiki.git
+	url = https://github.com/vim-scripts/vimwiki.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/commandt"]
+	path = bundle/commandt
+	url = https://github.com/vim-scripts/Command-T.git
+[submodule "bundle/bufexplore"]
+	path = bundle/bufexplore
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
