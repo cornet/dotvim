@@ -19,3 +19,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = git@github.com:cornet/vim-vimwiki.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git
