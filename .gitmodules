@@ -40,3 +40,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/vim-scripts/Tabular.git
+[submodule "bundle/vividchalk"]
+	path = bundle/vividchalk
+	url = https://github.com/tpope/vim-vividchalk.git
