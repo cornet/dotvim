@@ -33,7 +33,7 @@
 	url = https://github.com/vim-scripts/snipMate.git
 [submodule "bundle/puppet"]
 	path = bundle/puppet
-	url = git://github.com/rodjek/vim-puppet.git
+	url = git@github.com:cornet/vim-puppet.git
 [submodule "bundle/align"]
 	path = bundle/align
 	url = https://github.com/vim-scripts/Align.git
