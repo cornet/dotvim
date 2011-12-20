@@ -52,9 +52,8 @@ if has("gui_running")
   	colorscheme molokai
 	set guioptions=aAcem
 else
-  	colorscheme neon
-  ""	colorscheme wombat 
-
+	set t_Co=256
+  	colorscheme molokai
 endif
 
 " Highlight current line in gvim
