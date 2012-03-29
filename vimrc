@@ -6,7 +6,6 @@ call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-
 "Get out of VI's compatible mode..
 set nocp
 
@@ -51,15 +50,10 @@ set gfn=Ubuntu\ Mono\ 11
 if has("gui_running")
   	colorscheme molokai
 	set guioptions=aAcem
+	set cursorline
 else
 	set t_Co=256
   	colorscheme molokai
-endif
-
-" Highlight current line in gvim
-if has("gui_running")
-	set cursorline
-else
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
