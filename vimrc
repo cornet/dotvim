@@ -161,6 +161,11 @@ au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 	" For VimWiki
 	""""""""""""""""""""""""""""""""
 	let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+	"
+	""""""""""""""""""""""""""""""""
+	" For CtrlP
+	""""""""""""""""""""""""""""""""
+	let g:ctrlp_extensions =  ['buffertag', 'tag']
 
 	
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -197,6 +202,13 @@ au BufNewFile,BufRead rtp.conf         setf asterisk
 au BufNewFile,BufRead sip.conf         setf asterisk
 au BufNewFile,BufRead zapata.conf      setf asterisk
 au BufNewFile,BufRead zaptel.conf      setf asterisk
+
+autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
+
+autocmd BufNewFile,BufRead *.pde set cindent
+autocmd BufNewFile,BufRead *.ino set cindent
+
 
 " Wiki Syntax Highlighting
 " au BufRead,BufNewFile *.wiki setf wikipedia

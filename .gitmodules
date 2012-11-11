@@ -49,3 +49,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/Arduino-syntax-file"]
+	path = bundle/Arduino-syntax-file
+	url = https://github.com/vim-scripts/Arduino-syntax-file.git
