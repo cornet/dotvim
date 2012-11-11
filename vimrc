@@ -161,11 +161,17 @@ au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 	" For VimWiki
 	""""""""""""""""""""""""""""""""
 	let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
-	"
+
 	""""""""""""""""""""""""""""""""
 	" For CtrlP
 	""""""""""""""""""""""""""""""""
 	let g:ctrlp_extensions =  ['buffertag', 'tag']
+
+	""""""""""""""""""""""""""""""""
+	" For PowerLine
+	""""""""""""""""""""""""""""""""
+	" let g:Powerline_symbols = 'fancy'
+	set laststatus=2
 
 	
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
