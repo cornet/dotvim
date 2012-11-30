@@ -8,8 +8,3 @@ desc "Update submodules"
 task :update do
   system "git submodule foreach git pull origin master"
 end
-
-desc "Build extensions for modules"
-task :build do
-  system "cd ~/.vim/bundle/commandt/ruby/command-t/ && /usr/bin/ruby extconf.rb && make"
-end
