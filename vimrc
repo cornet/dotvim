@@ -71,7 +71,7 @@ set novisualbell
 set t_vb=
 
 " Show matching braces
-set showmatch
+" set showmatch
 
 " Show Line Numbers in GUI by default
 if has("gui_running")
