@@ -15,7 +15,7 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/colors"]
 	path = bundle/colors
-	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+	url = git://github.com/vim-scripts/Colour-Sampler-Pack.git
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vim-scripts/vimwiki.git
@@ -58,3 +58,6 @@
 [submodule "bundle/conque"]
 	path = bundle/conque
 	url = https://github.com/lrvick/Conque-Shell.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git

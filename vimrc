@@ -115,12 +115,13 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text options
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
 au FileType ruby  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+au FileType perl  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -222,3 +223,10 @@ autocmd BufNewFile,BufRead *.ino set cindent
 " Load tags file for C
 set tags+=~/.vim/systags
 filetype plugin indent on
+
+
+augroup Powerline
+	au!
+	au BufRead * call Pl#Load()
+augroup END
+
