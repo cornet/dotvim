@@ -216,6 +216,9 @@ autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufNewFile,BufRead *.pde set cindent
 autocmd BufNewFile,BufRead *.ino set cindent
 
+autocmd BufNewFile,BufRead *.pp set iskeyword=-,:,@,48-57,_,192-255
+
+
 
 " Wiki Syntax Highlighting
 " au BufRead,BufNewFile *.wiki setf wikipedia
