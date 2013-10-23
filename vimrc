@@ -48,12 +48,15 @@ set gfn=Ubuntu\ Mono\ 11
 
 " Theme selection
 if has("gui_running")
-  	colorscheme molokai
+  colorscheme molokai
 	set guioptions=aAcem
-	set cursorline
+  " To stop me accidently closing gvim
+	cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>
+  " mousehide is broken - don't use it
+  set nomousehide
 else
 	set t_Co=256
-  	colorscheme molokai
+  colorscheme molokai
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,58 +181,19 @@ au FileType perl  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " File Specific Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fold up interface.conf by default
-autocmd BufRead interface.conf set foldmethod=marker
-autocmd BufRead interface.conf set foldmarker={,}
-
-autocmd BufRead interface_common.conf set foldmethod=marker
-autocmd BufRead interface_common.conf set foldmarker={,}
-
-autocmd BufRead collector_chargebands.conf set foldmethod=marker
-autocmd BufRead collector_chargebands.conf set foldmarker={,}
-
-autocmd BufRead interface_archive.conf set foldmethod=marker
-autocmd BufRead interface_archive.conf set foldmarker={,}
-
-" Asterisk Syntax Highlighting
-au BufNewFile,BufRead voicemail.conf   setf asterisk_voicemail
-au BufNewFile,BufRead extensions.conf  setf asterisk 
-au BufNewFile,BufRead agents.conf      setf asterisk
-au BufNewFile,BufRead asterisk.conf    setf asterisk
-au BufNewFile,BufRead cdr_mysql.conf   setf asterisk
-au BufNewFile,BufRead extensions.conf  setf asterisk
-au BufNewFile,BufRead features.conf    setf asterisk
-au BufNewFile,BufRead festival.conf    setf asterisk
-au BufNewFile,BufRead logger.conf      setf asterisk
-au BufNewFile,BufRead manager.conf     setf asterisk
-au BufNewFile,BufRead modules.conf     setf asterisk
-au BufNewFile,BufRead musiconhold.conf setf asterisk
-au BufNewFile,BufRead queues.conf      setf asterisk
-au BufNewFile,BufRead rtp.conf         setf asterisk
-au BufNewFile,BufRead sip.conf         setf asterisk
-au BufNewFile,BufRead zapata.conf      setf asterisk
-au BufNewFile,BufRead zaptel.conf      setf asterisk
-
+" Arduino files
 autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
-
 autocmd BufNewFile,BufRead *.pde set cindent
 autocmd BufNewFile,BufRead *.ino set cindent
-
+" Puppet files
 autocmd BufNewFile,BufRead *.pp set iskeyword=-,:,@,48-57,_,192-255
-
-
-
-" Wiki Syntax Highlighting
-" au BufRead,BufNewFile *.wiki setf wikipedia
 
 " Load tags file for C
 set tags+=~/.vim/systags
 filetype plugin indent on
 
-
 augroup Powerline
 	au!
 	au BufRead * call Pl#Load()
 augroup END
-
