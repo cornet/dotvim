@@ -1,102 +1,65 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Use paothgen for managing plugins
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-"Get out of VI's compatible mode..
+" These must come before vundle
 set nocp
+filetype off
+"
+" Plugin Management
+"
+call plug#begin('~/.vim/plugged')
+ 
+" Interface Plugins
+Plug 'kien/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
 
-"Make backspace work all the time
-set bs=2
+" Vimwiki!
+Plug 'vimwiki/vimwiki'
 
-"Sets how many lines of history VIM har to remember
-set history=400
+" Git integration
+Plug 'tpope/vim-fugitive'
 
-"Enable filetype plugin
-filetype plugin on
-filetype indent on
+" General code editing plugins
+Plug 'godlygeek/tabular'
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-"Set mapleader
+" Ruby/Puppet Plugins
+Plug 'vim-ruby/vim-ruby'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'cornet/vim-puppet'
+
+" Colourschems
+Plug 'tomasr/molokai'
+
+call plug#end()
+
+"
+" Main Configuration
+"
+filetype plugin indent on
+syntax enable
+
+" Use , rather than \ for mapleader
 let mapleader = ","
 let g:mapleader = ","
 
-"Fast reloading of the .vimrc
+" Quick editing/reload of ~/.vimrc
 map <leader>s :source ~/.vimrc<cr>
-"Fast editing of .vimrc
 map <leader>e :e! ~/.vimrc<cr>
-"When .vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
 
-"Set path for .swp files and ~ files
+" Stop leaving .swp files all over the place
 set directory=~/.vimtmp
 set backupdir=~/.vimtmp
 
-"Set viminfo 
-set viminfo='20,<50,s10,h,!
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Enable syntax hl
-syntax enable
-
-"Set font to Monaco 10pt
-set gfn=Ubuntu\ Mono\ 11
-
-" Theme selection
-if has("gui_running")
-  colorscheme molokai
-	set guioptions=aAcem
-  " To stop me accidently closing gvim
-	cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>
-  " mousehide is broken - don't use it
-  set nomousehide
-else
-	set t_Co=256
-  colorscheme molokai
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" User Interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn on wildmenu
-set wildmenu
-
-" Always show current position
-set ruler
-
-" No sound on errors.
-set noerrorbells
-set novisualbell
-set t_vb=
-
-" Show matching braces
-" set showmatch
-
-" Show Line Numbers in GUI by default
-if has("gui_running")
-  set nu
-endif
-
-" Quick toggle of line numbers
-map <leader>l :set nu!<cr>
-
-"Set backspace
-set backspace=eol,start,indent
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Moving Around
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Smart way to move btw. windows
+" Move between windows easily
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-"Tab configuration
+" Tab configuration
 map <leader>tn :tabnew %<cr>
 map <leader>tl :tabnext<cr>
 map <leader>th :tabprevious<cr>
@@ -109,15 +72,35 @@ try
 catch
 endtry
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General Autocommands
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Switch to current dir
-" map <leader>cd :cd %:p:h<cr>
+set wildmenu
+set ruler
+set noerrorbells
+set novisualbell
+set t_vb=
+set tags+=~/.vim/systags
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Text options
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Set font to Monaco 10pt
+if has("gui_running")
+  colorscheme molokai
+	set gfn=Monospace\ 10
+	set guioptions=aAcem
+  " To stop me accidently closing gvim
+	cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'close' : 'q')<CR>
+  " mousehide is broken - don't use it
+  set nomousehide
+else
+	set t_Co=256
+  colorscheme molokai
+endif
+
+
+" Quick toggle of line numbers
+map <leader>l :set nu!<cr>
+
+" Make backspace behave properly
+set backspace=eol,start,indent
+
+" Tabwidth options
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
@@ -126,74 +109,52 @@ au FileType ruby  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType perl  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin Options
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-	""""""""""""""""""""""""""""""""
-	" For Minibuffer
-	""""""""""""""""""""""""""""""""
-	let g:bufExplorerSortBy = "name"
-	map <leader>Be :BufExplorer<cr>
-	map <leader>Bs :SBufExplorer<cr>
-	map <leader>Bv :VSBufExplorer<cr>
+" Plugin Configuration
+"
+" Change dir whenever root changes
+let NERDTreeChDirMode=2
+map <leader>ne :NERDTree<cr>
 
-	""""""""""""""""""""""""""""""""
-	" For Yankring
-	""""""""""""""""""""""""""""""""
-	map <leader>y :YRShow<cr>
-	
-	""""""""""""""""""""""""""""""""
-	" For NERDTree
-	""""""""""""""""""""""""""""""""
-	let NERDTreeChDirMode=2
-	map <leader>ne :NERDTree<cr>
-	
-	""""""""""""""""""""""""""""""""
-	" For Ack
-	""""""""""""""""""""""""""""""""
-	map <leader>f :Ack 
-	
-	""""""""""""""""""""""""""""""""
-	" For Taglist
-	""""""""""""""""""""""""""""""""
-	map <leader>T :Tlist<cr> 
-	map <Leader>rt :!ctags --extra=+f -R *<cr><cr>
+" Set path to wiki
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 
-	""""""""""""""""""""""""""""""""
-	" For VimWiki
-	""""""""""""""""""""""""""""""""
-	let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
+" Use ag for file searching
+let g:ctrlp_extensions =  ['buffertag', 'tag']
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+			\ --ignore .git
+			\ --ignore .svn
+			\ --ignore .hg
+			\ --ignore .DS_Store
+			\ --ignore "**/*.pyc"
+			\ -g ""'
 
-	""""""""""""""""""""""""""""""""
-	" For CtrlP
-	""""""""""""""""""""""""""""""""
-	let g:ctrlp_extensions =  ['buffertag', 'tag']
 
-	""""""""""""""""""""""""""""""""
-	" For PowerLine
-	""""""""""""""""""""""""""""""""
-	" let g:Powerline_symbols = 'fancy'
-	set laststatus=2
+" Always display airline with dark theme
+set laststatus=2
+let g:airline_theme = 'dark'
 
-	
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" File Specific Stuff
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Arduino files
-autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
-autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
-autocmd BufNewFile,BufRead *.pde set cindent
-autocmd BufNewFile,BufRead *.ino set cindent
-" Puppet files
-autocmd BufNewFile,BufRead *.pp set iskeyword=-,:,@,48-57,_,192-255
+" Clear out default symbols and load new ones
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
-" Load tags file for C
-set tags+=~/.vim/systags
-filetype plugin indent on
+" Required for textobj-rubyblock
+runtime macros/matchit.vim
 
-augroup Powerline
-	au!
-	au BufRead * call Pl#Load()
-augroup END
+" Use tab/shift-tab to navigate between tabstops
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
