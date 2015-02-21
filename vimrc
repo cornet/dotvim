@@ -46,7 +46,7 @@ let g:mapleader = ","
 
 " Quick editing/reload of ~/.vimrc
 map <leader>s :source ~/.vimrc<cr>
-map <leader>e :e! ~/.vimrc<cr>
+map <leader>e :e! ~/.vim/vimrc<cr>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 " Stop leaving .swp files all over the place
@@ -158,3 +158,12 @@ runtime macros/matchit.vim
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" fugitive bindings
+map <leader>gd :Gvdiff<cr>
+map <leader>gs :Gstatus<cr>
+map <leader>gl :Glog<cr>
+
+map <leader>ga :Git add %:p<cr><cr>
+map <leader>gt :Gcommit -v -q<cr>
+map <leader>gc :Gcommit -v -q %:p<cr>
