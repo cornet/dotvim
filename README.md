@@ -1,6 +1,10 @@
 # dotvim
 My Vim Configuration
 
+## Requirements
+* vim built with python extensions
+* ag ```apt-get install silversearcher-ag``` or ```brew install ag```
+
 ## Usage
 
 Clear out your old vim config
