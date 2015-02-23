@@ -5,7 +5,7 @@ filetype off
 " Plugin Management
 "
 call plug#begin('~/.vim/plugged')
- 
+
 " Interface Plugins
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
@@ -122,7 +122,6 @@ map <leader>ne :NERDTree<cr>
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 
 " Use ag for file searching
-let g:ctrlp_by_filename = 1
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 			\ --ignore .git
 			\ --ignore .svn
