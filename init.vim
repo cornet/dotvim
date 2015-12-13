@@ -4,10 +4,12 @@ filetype off
 "
 " Plugin Management
 "
-call plug#begin('~/.vim/plugged')
-
+call plug#begin('~/.config/nvim/plugged')
+" 
 " Interface Plugins
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
 
@@ -19,11 +21,12 @@ Plug 'tpope/vim-fugitive'
 
 " General code editing plugins
 Plug 'godlygeek/tabular'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'xolox/vim-misc'
 Plug 'majutsushi/tagbar'
+Plug 'benekastah/neomake'
 
 " Ruby/Puppet Plugins
 Plug 'vim-ruby/vim-ruby'
@@ -31,8 +34,12 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'cornet/vim-puppet'
 
+" Syntax highlighting
+Plug 'wellbredgrapefruit/tomdoc.vim'
+
 " Colourschems
 Plug 'tomasr/molokai'
+" Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -42,14 +49,19 @@ call plug#end()
 filetype plugin indent on
 syntax enable
 
+" Revert annoying nvim defaults
+set noincsearch
+set mouse=
+
 " Use , rather than \ for mapleader
 let mapleader = ","
 let g:mapleader = ","
 
 " Quick editing/reload of ~/.vimrc
-map <leader>s :source ~/.vimrc<cr>
-map <leader>e :e! ~/.vim/vimrc<cr>
-autocmd! bufwritepost vimrc source ~/.vimrc
+map <leader>s :source ~/.config/nvim/init.vim<cr>
+map <leader>e :e! ~/.config/nvim/init.vim<cr>
+autocmd! bufwritepost nvimrc source ~/.config/nvim/init.vim
+autocmd! bufwritepost * Neomake
 
 " Stop leaving .swp files all over the place
 set directory=~/.vimtmp
@@ -92,6 +104,7 @@ if has("gui_running")
   set nomousehide
 else
 	set t_Co=256
+  " colorscheme PaperColor-Dark
   colorscheme molokai
 endif
 
@@ -133,7 +146,8 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 
 " Always display airline with dark theme
 set laststatus=2
-let g:airline_theme = 'dark'
+
+let g:airline_theme='dark'
 
 " Clear out default symbols and load new ones
 if !exists('g:airline_symbols')
@@ -164,6 +178,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 map <leader>gd :Gvdiff<cr>
 map <leader>gs :Gstatus<cr>
 map <leader>gl :Glog<cr>
+map <leader>gb :Gbrowse<cr>
 
 map <leader>ga :Git add %:p<cr><cr>
 map <leader>gt :Gcommit -v -q<cr>
@@ -182,3 +197,23 @@ let g:tagbar_type_puppet = {
         \'d:definition'
       \]
     \}
+
+" Fix neomake puppet parser maker
+let g:neomake_puppet_puppet_maker = {
+			\ 'exe': 'puppet',
+			\ 'args': ['parser', 'validate', '--color=false'],
+			\ 'errorformat': '%t%*[a-zA-Z]: %m at %f:%l',
+			\ }
+
+" Disable puppet-lint checker
+let g:neomake_puppet_puppetlint_maker = {
+			\ }
+
+let g:neomake_puppet_enable_makers = ['puppet']
+
+if has('nvim')
+  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+endif
+
+let g:fzf_command_prefix = 'Fzf'
+map <C-p> :FZF<cr>
