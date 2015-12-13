@@ -6,8 +6,23 @@ My NeoVim Configuration. Requires NeoVim >= 0.1.1
 * neovim python modules: `pip install neovim`
 * ctags
 
-## Usage
+### Ubuntu
+```shell
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+sudo apt-get install exuberant-ctags python-dev python-pip
+pip install neovim
+```
 
+### OS X
+```shell
+brew install neovim/neovim/neovim
+brew install ctags python
+pip install neovim
+```
+
+## Usage
 Clear out your old nvim config
 ```shell
 rm -rf ~/.config/nvim
@@ -28,7 +43,6 @@ Fire up `nvim` (ignore any warnings/errors) then run
 Restart vim and enjoy the shiny.
 
 ## Puppet ctags support
-
 Add the following to `~/.ctags`
 
 ```shell
