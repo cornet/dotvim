@@ -1,23 +1,22 @@
 # dotvim
-My NeoVim Configuration
+My NeoVim Configuration. Requires NeoVim >= 0.1.1
 
 ## Requirements
 * neovim
-* neovim python modules `pip install neovim`
-* ag ```apt-get install silversearcher-ag``` or ```brew install ag```
+* neovim python modules: `pip install neovim`
+* ctags
 
 ## Usage
 
-Clear out your old vim config
+Clear out your old nvim config
 ```shell
-cd ~ && rm -rf .vim .vimrc
+rm -rf ~/.config/nvim
 ```
 
-Clone and move everything into the right places
+Clone repo and create tmp dir
 ```shell
-git clone git@github.com:cornet/dotvim.git
-mkdir -p ~/.config/
-mv dotvim ~/.config/nvim
+mkdir -p ~/.config
+git clone git@github.com:cornet/dotvim.git ~/.config/nvim
 mkdir ~/.vimtmp
 ```
 
@@ -27,3 +26,16 @@ Fire up `nvim` (ignore any warnings/errors) then run
 ```
 
 Restart vim and enjoy the shiny.
+
+## Puppet ctags support
+
+Add the following to `~/.ctags`
+
+```shell
+--langdef=puppet
+--langmap=puppet:.pp
+--regex-puppet=/^class[ \t]*([:a-zA-Z0-9_\-]+)[ \t]*/\1/c,class/
+--regex-puppet=/^site[ \t]*([a-zA-Z0-9_\-]+)[ \t]*/\1/s,site/
+--regex-puppet=/^node[ \t]*([a-zA-Z0-9_\-]+)[ \t]*/\1/n,node/
+--regex-puppet=/^define[ \t]*([:a-zA-Z0-9_\-]+)[ \t]*/\1/d,definition/
+```
