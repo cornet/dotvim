@@ -40,7 +40,14 @@ Fire up `nvim` (ignore any warnings/errors) then run
 :PlugInstall
 ```
 
-Restart vim and enjoy the shiny.
+Restart `nvim` and enjoy the shiny.
+
+You also might want to add the following to your shell config
+```shell
+alias vim=nvim
+alias vi=nvim
+export EDITOR=nvim
+```
 
 ## Puppet ctags support
 Add the following to `~/.ctags`
