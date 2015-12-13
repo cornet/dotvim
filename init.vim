@@ -73,6 +73,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Use ctrl+n to enter terminal visual mode
+tnoremap <C-n> <C-\><C-n>
+
 " Fzf mapping
 map <leader>ft :FzfBTags<cr>
 map <leader>fb :FzfBuffers<cr>
