@@ -59,6 +59,8 @@ let g:mapleader = ","
 map <leader>s :source ~/.config/nvim/init.vim<cr>
 map <leader>e :e! ~/.config/nvim/init.vim<cr>
 autocmd! bufwritepost nvimrc source ~/.config/nvim/init.vim
+
+" Auto-run Neomake on save
 autocmd! bufwritepost * Neomake
 
 " Stop leaving .swp files all over the place
