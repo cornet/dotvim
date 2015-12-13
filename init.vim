@@ -73,6 +73,13 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Fzf mapping
+map <leader>ft :FzfBTags<cr>
+map <leader>fb :FzfBuffers<cr>
+map <leader>fc :FzfCommits<cr>
+map <leader>fs :FzfSnippets<cr>
+map <leader>fg :FzfGitFiles<cr>
+
 " Tab configuration
 map <leader>tn :tabnew %<cr>
 map <leader>tl :tabnext<cr>
