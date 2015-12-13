@@ -7,7 +7,6 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 " 
 " Interface Plugins
-"Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'bling/vim-airline'
@@ -21,7 +20,6 @@ Plug 'tpope/vim-fugitive'
 
 " General code editing plugins
 Plug 'godlygeek/tabular'
-" Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'xolox/vim-misc'
