@@ -82,6 +82,7 @@ map <leader>fb :FzfBuffers<cr>
 map <leader>fc :FzfCommits<cr>
 map <leader>fs :FzfSnippets<cr>
 map <leader>fg :FzfGitFiles<cr>
+map <leader>ff :FZF<cr>
 
 " Tab configuration
 map <leader>tn :tabnew %<cr>
@@ -226,4 +227,4 @@ if has('nvim')
 endif
 
 let g:fzf_command_prefix = 'Fzf'
-map <C-p> :FZF<cr>
+map <C-p> :FzfGitFiles<cr>
