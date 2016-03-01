@@ -9,7 +9,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Interface Plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 
 " Vimwiki!
@@ -37,6 +38,7 @@ Plug 'wellbredgrapefruit/tomdoc.vim'
 
 " Colourschems
 Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
 " Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
@@ -114,9 +116,11 @@ if has("gui_running")
   " mousehide is broken - don't use it
   set nomousehide
 else
-	set t_Co=256
   " colorscheme PaperColor-Dark
-  colorscheme molokai
+  " colorscheme molokai
+	set background=dark
+	let base16colorspace=256
+	colorscheme base16-chalk
 endif
 
 
@@ -158,7 +162,7 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 " Always display airline with dark theme
 set laststatus=2
 
-let g:airline_theme='dark'
+let g:airline_theme='base16_chalk'
 
 " Clear out default symbols and load new ones
 if !exists('g:airline_symbols')
