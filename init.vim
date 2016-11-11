@@ -25,6 +25,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'xolox/vim-misc'
 Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-easytags'
 Plug 'benekastah/neomake'
 
 " Ruby/Puppet Plugins
@@ -32,6 +33,9 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'cornet/vim-puppet'
+
+" Go
+Plug 'fatih/vim-go'
 
 " Syntax highlighting
 Plug 'wellbredgrapefruit/tomdoc.vim'
@@ -121,6 +125,8 @@ else
 	set background=dark
 	let base16colorspace=256
 	colorscheme base16-chalk
+	" Fix copy/paste
+	highlight Normal ctermbg=NONE
 endif
 
 
@@ -232,3 +238,27 @@ endif
 
 let g:fzf_command_prefix = 'Fzf'
 map <C-p> :FzfGitFiles<cr>
+
+" Fix colours in terminal so they are base16-chalk
+let g:terminal_color_0 = '#151515'
+let g:terminal_color_1 = '#fb9fb1'
+let g:terminal_color_2 = '#acc267'
+let g:terminal_color_3 = '#ddb26f'
+let g:terminal_color_4 = '#6fc2ef'
+let g:terminal_color_5 = '#e1a3ee'
+let g:terminal_color_6 = '#12cfc0'
+let g:terminal_color_7 = '#d0d0d0'
+let g:terminal_color_8 = '#505050'
+let g:terminal_color_9 = '#fb9fb1'
+let g:terminal_color_10 = '#acc267'
+let g:terminal_color_11 = '#ddb26f'
+let g:terminal_color_12 = '#6fc2ef'
+let g:terminal_color_13 = '#e1a3ee'
+let g:terminal_color_14 = '#12cfc0'
+let g:terminal_color_15 = '#f5f5f5'
+let g:terminal_color_16 = '#eda987'
+let g:terminal_color_17 = '#deaf8f'
+let g:terminal_color_18 = '#202020'
+let g:terminal_color_19 = '#303030'
+let g:terminal_color_20 = '#b0b0b0'
+let g:terminal_color_21 = '#e0e0e0'
