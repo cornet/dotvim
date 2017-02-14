@@ -25,17 +25,6 @@ let NERDTreeChDirMode=2
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': {'ruby': 'ruby'}}]
 
 
-" ctrlp:
-" Use ag for file searching
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-			\ --ignore .git
-			\ --ignore .svn
-			\ --ignore .hg
-			\ --ignore .DS_Store
-			\ --ignore "**/*.pyc"
-			\ -g ""'
-
-
 " airline:
 " Always display airline with dark theme
 set laststatus=2
