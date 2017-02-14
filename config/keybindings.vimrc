@@ -11,7 +11,7 @@ map <leader>l :set nu!<cr>
 tnoremap <C-n> <C-\><C-n>
 
 " Tab configuration
-map <leader>tn :tabnew %<cr>
+map <leader>tn :tabnew<cr>
 map <leader>tl :tabnext<cr>
 map <leader>th :tabprevious<cr>
 map <leader>te :tabedit
