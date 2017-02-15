@@ -5,6 +5,9 @@ syntax enable
 set noincsearch
 set mouse=
 
+" Live find/replace
+set inccommand=nosplit
+
 " Use , rather than \ for mapleader
 let mapleader = ","
 let g:mapleader = ","
