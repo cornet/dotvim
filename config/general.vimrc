@@ -6,6 +6,9 @@ set noincsearch
 set mouse=
 set clipboard+=unnamedplus
 
+" Live find/replace
+set inccommand=nosplit
+
 " Use , rather than \ for mapleader
 let mapleader = ","
 let g:mapleader = ","
