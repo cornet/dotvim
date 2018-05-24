@@ -4,6 +4,7 @@ syntax enable
 " Revert annoying nvim defaults
 set noincsearch
 set mouse=
+set clipboard+=unnamedplus
 
 " Use , rather than \ for mapleader
 let mapleader = ","

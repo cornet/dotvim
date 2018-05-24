@@ -45,4 +45,13 @@ Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
 Plug 'mileszs/ack.vim'
 
+" Simplenote
+Plug 'mrtazz/simplenote.vim'
+
+" Terraform
+Plug 'hashivim/vim-terraform'
+
+" tim-mux-navigator
+Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()

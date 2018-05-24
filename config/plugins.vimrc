@@ -9,9 +9,6 @@ let g:neomake_puppet_puppet_maker = {
 			\ 'errorformat': '%t%*[a-zA-Z]: %m at %f:%l',
 			\ }
 
-" Disable puppet-lint checker
-let g:neomake_puppet_puppetlint_maker = {
-			\ }
 let g:neomake_puppet_enable_makers = ['puppet']
 
 
@@ -80,8 +77,12 @@ if has('nvim')
 endif
 let g:fzf_command_prefix = 'Fzf'
 
-
 " ack:
 let g:ackprg = 'ag --vimgrep'
 
+" simplenote
+source ~/.simplenoterc
+let g:SimplenoteFiletype = 'markdown'
 
+" terraform
+let g:terraform_fmt_on_save = 1
