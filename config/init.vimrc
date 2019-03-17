@@ -25,8 +25,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'xolox/vim-misc'
 Plug 'majutsushi/tagbar'
-Plug 'xolox/vim-easytags'
 Plug 'benekastah/neomake'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Ruby/Puppet Plugins
 Plug 'vim-ruby/vim-ruby'
@@ -53,5 +53,8 @@ Plug 'hashivim/vim-terraform'
 
 " tim-mux-navigator
 Plug 'christoomey/vim-tmux-navigator'
+
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()

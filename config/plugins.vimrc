@@ -20,6 +20,7 @@ let NERDTreeChDirMode=2
 " vimwiki:
 " Set path to wiki
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': {'ruby': 'ruby'}}]
+let g:vimwiki_global_ext = 0
 
 
 " airline:
@@ -86,3 +87,6 @@ let g:SimplenoteFiletype = 'markdown'
 
 " terraform
 let g:terraform_fmt_on_save = 1
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
