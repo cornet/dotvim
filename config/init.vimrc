@@ -46,7 +46,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'mileszs/ack.vim'
 
 " Simplenote
-Plug 'mrtazz/simplenote.vim'
+" Plug 'mrtazz/simplenote.vim'
 
 " Terraform
 Plug 'hashivim/vim-terraform'
