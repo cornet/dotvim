@@ -82,8 +82,8 @@ let g:fzf_command_prefix = 'Fzf'
 let g:ackprg = 'ag --vimgrep'
 
 " simplenote
-source ~/.simplenoterc
-let g:SimplenoteFiletype = 'markdown'
+"source ~/.simplenoterc
+"let g:SimplenoteFiletype = 'markdown'
 
 " terraform
 let g:terraform_fmt_on_save = 1
