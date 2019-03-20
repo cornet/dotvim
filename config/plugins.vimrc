@@ -21,7 +21,7 @@ let NERDTreeChDirMode=2
 " Set path to wiki
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': {'ruby': 'ruby'}}]
 let g:vimwiki_global_ext = 0
-
+let g:vimwiki_auto_chdir = 1
 
 " airline:
 " Always display airline with dark theme
