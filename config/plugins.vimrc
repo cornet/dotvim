@@ -81,12 +81,26 @@ let g:fzf_command_prefix = 'Fzf'
 " ack:
 let g:ackprg = 'ag --vimgrep'
 
-" simplenote
-"source ~/.simplenoterc
-"let g:SimplenoteFiletype = 'markdown'
-
 " terraform
-let g:terraform_fmt_on_save = 1
+autocmd BufNewFile,BufRead *.hcl set ft=terraform
+autocmd BufNewFile,BufRead *.hcl set ts=2
+autocmd BufNewFile,BufRead *.hcl set expandtab
+let g:terraform_fmt_on_save = 0
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+
+" let g:deoplete#omni_patterns = {}
+" 
+" call deoplete#custom#option('omni_patterns', {
+" \ 'complete_method': 'omnifunc',
+" \ 'terraform': '[^ *\t"{=$]\w*',
+" \})
+
+call deoplete#initialize()
+
+" Disable gutentags for git commit/rebase files
+au FileType gitcommit,gitrebase let g:gutentags_enabled
+
+" Place tags files in ~/.vimtmp
+let g:gutentags_cache_dir = '~/.vimtmp'

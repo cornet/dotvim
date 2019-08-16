@@ -48,13 +48,17 @@ Plug 'mileszs/ack.vim'
 " Simplenote
 " Plug 'mrtazz/simplenote.vim'
 
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " Terraform
 Plug 'hashivim/vim-terraform'
+" Plug 'juliosueiras/vim-terraform-completion'
 
 " tim-mux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
-" deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Use release branch
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
