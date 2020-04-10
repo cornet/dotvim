@@ -88,16 +88,8 @@ autocmd BufNewFile,BufRead *.hcl set expandtab
 let g:terraform_fmt_on_save = 0
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
-
-" let g:deoplete#omni_patterns = {}
-" 
-" call deoplete#custom#option('omni_patterns', {
-" \ 'complete_method': 'omnifunc',
-" \ 'terraform': '[^ *\t"{=$]\w*',
-" \})
-
-call deoplete#initialize()
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#initialize()
 
 " Disable gutentags for git commit/rebase files
 au FileType gitcommit,gitrebase let g:gutentags_enabled

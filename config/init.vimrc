@@ -58,7 +58,4 @@ Plug 'hashivim/vim-terraform'
 " tim-mux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
-" Use release branch
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 call plug#end()

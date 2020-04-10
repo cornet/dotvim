@@ -45,18 +45,12 @@ map <leader>ne :NERDTree<cr>
 nnoremap <Leader>a :Ack!<Space>
 
 " Fugitive
-map <leader>gd :Gvdiff<cr>
+map <leader>gd :Gvdiffsplit<cr>
 map <leader>gs :Gstatus<cr>
 map <leader>gl :Glog<cr>
 map <leader>gb :Gbrowse<cr>
 map <leader>ga :Git add %:p<cr><cr>
-map <leader>gt :Gcommit -v -q<cr>
-map <leader>gc :Gcommit -v -q %:p<cr>
+map <leader>gc :Gcommit -v -q<cr>
 
 " TagBar
 map <leader>t :TagbarToggle<cr>
-
-
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
